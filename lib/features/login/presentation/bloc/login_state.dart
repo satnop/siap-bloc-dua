@@ -6,8 +6,7 @@ abstract class LoginState {
 }
 
 final class LoginInitial extends LoginState {
-  const LoginInitial({bool showPassword = false})
-    : super(showPassword: showPassword);
+  const LoginInitial({super.showPassword});
 }
 
 class LoginPrefilled extends LoginState {
@@ -17,20 +16,18 @@ class LoginPrefilled extends LoginState {
   LoginPrefilled({
     required this.pid,
     required this.password,
-    bool showPassword = false,
-  }) : super(showPassword: showPassword);
+    super.showPassword,
+  });
 }
 
 class LoginLoading extends LoginState {
-  const LoginLoading({bool showPassword = false})
-    : super(showPassword: showPassword);
+  const LoginLoading({super.showPassword});
 }
 
 class LoginSuccess extends LoginState {
   final String role;
 
-  LoginSuccess(this.role, {bool showPassword = false})
-    : super(showPassword: showPassword);
+  LoginSuccess(this.role, {super.showPassword});
 }
 
 // class LoginData extends LoginState {
@@ -41,6 +38,5 @@ class LoginSuccess extends LoginState {
 class LoginFailure extends LoginState {
   final String message;
 
-  LoginFailure(this.message, {bool showPassword = false})
-    : super(showPassword: showPassword);
+  LoginFailure(this.message, {super.showPassword});
 }

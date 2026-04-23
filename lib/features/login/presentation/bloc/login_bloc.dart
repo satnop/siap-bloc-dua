@@ -18,7 +18,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     final pid = await repository.localStorage.getPid();
-    emit(LoginPrefilled(pid: pid ?? '', password: ''));
+    final pswd = await repository.localStorage.getPswd();
+    emit(LoginPrefilled(pid: pid ?? '', password: pswd ?? ''));
   }
 
   Future<void> _onPasswordVisibilityToggled(

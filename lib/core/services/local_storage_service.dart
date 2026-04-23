@@ -6,6 +6,7 @@ class LocalStorageService {
     required String nama,
     required String gedung,
     required String kodebagian,
+    required String password,
   }) async {
     final prefs = await SharedPreferences.getInstance();
 
@@ -13,6 +14,7 @@ class LocalStorageService {
     await prefs.setString('nama', nama);
     await prefs.setString('gedung', gedung);
     await prefs.setString('kodebagian', kodebagian);
+    await prefs.setString('password', password);
   }
 
   Future<String?> getKodebagian() async {
@@ -32,7 +34,7 @@ class LocalStorageService {
 
   Future<void> savePswd(String passw) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('pswd', passw);
+    await prefs.setString('password', passw);
   }
 
   Future<String?> getPid() async {
@@ -42,7 +44,7 @@ class LocalStorageService {
 
   Future<String?> getPswd() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString('pswd');
+    return prefs.getString('password');
   }
 
   Future<bool> isLoggedIn() async {

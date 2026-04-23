@@ -41,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
             if (state is LoginPrefilled) {
               if (state.pid.isNotEmpty && _pidController.text != state.pid) {
                 _pidController.text = state.pid;
+                _pswdController.text = state.password;
               }
             }
             if (state is LoginSuccess) {

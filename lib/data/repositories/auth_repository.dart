@@ -25,6 +25,7 @@ class AuthRepository {
       nama: user.nama,
       gedung: user.gedung ?? '',
       kodebagian: user.kodebagian,
+      password: password,
     );
 
     return user;
